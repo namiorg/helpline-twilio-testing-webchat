@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test WebChat</title>
+    <script src="https://assets.flex.twilio.com/releases/flex-webchat-ui/2.8.1/twilio-flex-webchat.min.js"
+      integrity="sha512-KzpB56iRohSbDOkfM/V0PTp9DGHMno2EJJx6Zg8Ul3byOV3xtAurIZ+NibcO+cc0SEDvodI/5SKMSv2p+gwSYw=="
+      crossorigin=""></script>
+    <script src="./appConfig.js"></script>
+    <script src="./webchat.js"></script>
+  </head>
+  <body>
+    <script>
+      const urlParams = new URL(window.location).searchParams;
+      const accountSid = urlParams.get('account');
+      const flexFlowSid = urlParams.get('flow');
+      const runtimeDomain = urlParams.get('runtime');
+
+      if (!accountSid || !flexFlowSid || !runtimeDomain) {
+        const notice = `
+          <div>
+            <p>Error! Did you remember to set the <code>account</code>, <code>flow</code>, and <code>runtime</code> url parameters?</p>
+            <pre>
+              account: ${accountSid}
+              flow: ${flexFlowSid}
+              runtime: ${runtimeDomain}
+            </pre>
+          </div>
+        `;
+        document.body.innerHTML += notice;
+      } else {
+        webchatInit({ 
+          ...appConfig,
+          accountSid: accountSid,
+          flexFlowSid: flexFlowSid,
+          runtimeDomain: `https://${runtimeDomain}`
+        });
+      }
+    </script>
+  </body>
+</html>
