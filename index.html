@@ -14,6 +14,7 @@
       const accountSid = urlParams.get('account');
       const flexFlowSid = urlParams.get('flow');
       const runtimeDomain = urlParams.get('runtime');
+      const startMsg = urlParams.get('startMsg');
 
       if (!accountSid || !flexFlowSid || !runtimeDomain) {
         const notice = `
@@ -32,9 +33,15 @@
           ...appConfig,
           accountSid: accountSid,
           flexFlowSid: flexFlowSid,
-          runtimeDomain: `https://${runtimeDomain}`
+          runtimeDomain: `https://${runtimeDomain}`,
+          startMsg: startMsg
         });
       }
     </script>
+    <style>
+      input[name="hide-me"] {
+        display: none !important;
+      }
+    </style>
   </body>
 </html>

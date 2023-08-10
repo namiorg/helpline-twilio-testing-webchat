@@ -32,8 +32,20 @@ const appConfig = {
     // pre-engagement form config
     startEngagementOnInit: false,
     preEngagementConfig: {
-    description: 'Welcome to the NAMI HelpLine! If you are in crisis, please call or text 988 to reach the 988 Suicide & Crisis Lifeline.',
+    // description: 'Welcome to the NAMI HelpLine! If you are in crisis, please call or text 988 to reach the 988 Suicide & Crisis Lifeline.',
+    description: "This is a test widget.",
     fields: [
+        {
+            label: "Click the button below to begin a test session.",
+            type: "InputItem",
+            attributes: {
+                name: "hide-me",
+                type: "text",
+                required: false,
+                disabled: true
+            }
+        }
+        /*
         {
             label: "Here is an example question with an unrequired short-text answer.",
             type: "InputItem",
@@ -70,7 +82,8 @@ const appConfig = {
                 },
             ]
         },
+        */
     ],
-    submitLabel: "Submit"
+    submitLabel: "Start"
   }
 }

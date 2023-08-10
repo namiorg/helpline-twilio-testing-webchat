@@ -34,9 +34,11 @@ function webchatInit (appConfig) {
           const preEngagementResponses = payload.formData;
           if (!preEngagementResponses) return;
           const { channelSid } = manager.store.getState().flex.session;
-          // manager
-          //   .chatClient.getChannelBySid(channelSid)
-          //   .then(channel => channel.sendMessage(JSON.stringify(preEngagementResponses)));
+          if (appConfig?.startMsg) {
+            manager
+             .chatClient.getChannelBySid(channelSid)
+             .then(channel => channel.sendMessage(startMsg));
+          }
         } catch (err) {
             console.error(err);
         }
