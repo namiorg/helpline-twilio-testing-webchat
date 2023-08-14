@@ -15,6 +15,12 @@
       const flexFlowSid = urlParams.get('flow');
       const runtimeDomain = urlParams.get('runtime');
       const startMsg = urlParams.get('startMsg');
+      const sysType = urlParams.get('sysType');
+
+      if (sysType) {
+        const notice = `<div>NOTICE: You are on the ${sysType} testing system!`;
+        document.body.innerHTML += notice;
+      }
 
       if (!accountSid || !flexFlowSid || !runtimeDomain) {
         const notice = `
