@@ -26,7 +26,7 @@ const appConfig = {
         }
     },
     context: {
-      friendlyName: "guest"
+      friendlyName: "Anonymous"
     },
 
     // pre-engagement form config
