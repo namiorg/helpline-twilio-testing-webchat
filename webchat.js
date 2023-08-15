@@ -49,7 +49,15 @@ function webchatInit (appConfig) {
     manager.strings.PredefinedChatMessageBody = appConfig?.predefinedChatMessageBody || "";
     manager.strings.MessageCanvasTrayContent = appConfig?.messageCanvasTrayContent;
 
+    console.log(manager.strings);
+
     // UI changes
+    Twilio.FlexWebChat.MessagingCanvas.defaultProps.memberDisplayOptions = {
+      yourDefaultName: "Anonymous",
+      yourFriendlyNameOverride: false,
+      theirDefaultName: "NAMI HelpLine",
+      theirFriendlyNameOverride: false
+    };
     Twilio.FlexWebChat.MainHeader.defaultProps.showImage = false;
     Twilio.FlexWebChat.MainHeader.defaultProps.titleText = "NAMI HelpLine";
     Twilio.FlexWebChat.MessagingCanvas.defaultProps.showTrayOnInactive = true;
