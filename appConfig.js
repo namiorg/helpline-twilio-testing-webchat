@@ -6,7 +6,7 @@ const appConfig = {
     // MESSAGE SETTINGS
 
     // set the first message sent by NAMI HelpLine
-    predefinedChatMessageBody: "Welcome to the NAMI HelpLine. We are here to help with your mental health questions or concerns, offer helpful resources, and share support and encouragement. If you are in crisis, text CRISIS. Before you proceed, please review our terms of use, linked above. If you understand and agree to the terms of use, text GO.",
+    predefinedChatMessageBody: "Welcome to the NAMI HelpLine. We are here to help with your mental health concerns, offer resources, and share support. If you are in crisis, reply CRISIS. Please review our terms of use, linked above. If you understand and agree to the terms of use, reply GO.",
 
     // set the welcome text at the top of the chat thread
     welcomeMessage: 'NAMI Helpline<br /><a href="https://www.nami.org/Terms-of-Use/NAMI-HelpLine-Terms-of-Service" target="_blank">Terms of Service</a><br /><br />Hours: 10AM - 10PM ET',
