@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+        <meta name="theme-color" content="#000000">
+          <link rel="shortcut icon" href="/favicon.ico">
+            <title>Test Conversations Webchat</title>
+            <style>body,html{height:100%}body{margin:0;background:#e4eaf0}
+            </style>
+            <script defer="defer" src="/static/js/main.js">
+            </script>
+  </head>
+  <body>
+    <main></main>
+    <noscript>You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="twilio-webchat-widget-root">
+    </div>
+    <script>
+      window.addEventListener("DOMContentLoaded", (() => {
+          const urlParams = new URL(window.location).searchParams;
+          const runtime = urlParams.get('runtime') || '';
+          const main = document.querySelector('main');
+          main.innerText = runtime.length > 0 ? `Runtime Domain: ${runtime}` : "Runtime not specified!";
+          if (runtime.length > 0) {
+              Twilio.initWebchat({
+                  serverUrl: `https://${runtime}.twil.io`,
+                  theme: {
+                      isLight: true,
+                      overrides: {
+                          backgroundColors: {
+                              colorBackgroundPrimary: "#0c499c"
+                          }
+                      },
+                  },
+                  fileAttachment: {
+                      enabled: false,
+                  }
+              });
+          }
+      }))
+    </script>
+  </body>
+</html>
